@@ -1,0 +1,15 @@
+{
+  "name": "introduction",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemonindex.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
