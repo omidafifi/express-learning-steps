@@ -3,10 +3,11 @@ const app = express();
 
 const PORT = 3000;
 // تعریف یک روت ساده
-// app.get("/", (req, res) => {
-//   console.log("Welcome to route /");
-//   res.send("<h1>Hello Express.js 🚀</h1>");
-// });
+app.get("/", (req, res) => {
+  console.log("Welcome to route /");
+  // res.statusCode = 200;
+  res.status(200).send("<h1>Hello Express.js 🚀</h1>");
+});
 
 // مثال JSON
 // app.get("/api", (req, res) => {
@@ -20,6 +21,16 @@ app.get("/users", (req, res) => {
       { id: 2, name: "user2" },
       { id: 3, name: "user3" },
       { id: 4, name: "user4" },
+    ],
+  });
+});
+app.get("/products", (req, res) => {
+  res.json({
+    product: [
+      { id: 5, name: "user5" },
+      { id: 6, name: "user6" },
+      { id: 7, name: "user7" },
+      { id: 8, name: "user8" },
     ],
   });
 });
