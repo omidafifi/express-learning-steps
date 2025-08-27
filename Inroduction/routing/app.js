@@ -1,12 +1,19 @@
 const express = require("express");
 const app = express();
+const PORT = 3000;
+
+// تعریف یک روت ساده
 app.get("/", (req, res) => {
-  console.log("wellcom to rouat...");
-  // res.send("<h1>Hello expressJS .....</h1>");
-  // res.send({ message: "Hello (Json)" });
-  res.send("hello express");
+  console.log("Welcome to route /");
+  res.send("<h1>Hello Express.js 🚀</h1>");
 });
-app.listen(3000, () => {
-  console.log("Server is running on port 3000 at http://localhost:3000");
+
+// مثال JSON
+app.get("/api", (req, res) => {
+  res.json({ message: "Hello from JSON endpoint!" });
 });
-//routing
+
+// اجرای سرور
+app.listen(PORT, () => {
+  console.log(`✅ Server is running at http://localhost:${PORT}`);
+});
