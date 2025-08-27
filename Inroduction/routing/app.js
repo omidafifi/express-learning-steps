@@ -27,10 +27,10 @@ app.get("/users", (req, res) => {
 app.get("/products", (req, res) => {
   res.json({
     product: [
-      { id: 5, name: "user5" },
-      { id: 6, name: "user6" },
-      { id: 7, name: "user7" },
-      { id: 8, name: "user8" },
+      { id: 5, name: "product5" },
+      { id: 6, name: "product6" },
+      { id: 7, name: "product7" },
+      { id: 8, name: "product8" },
     ],
   });
 });
