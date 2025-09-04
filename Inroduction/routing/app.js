@@ -41,7 +41,7 @@ app.get("/products", (req, res) => {
 
 app.get("/users/:id", (req, res) => {
   const { id } = req.params;
-  const user = user.find((user) => user.id == id);
+  const user = users.users.find((u) => u.id == id);
   if (!user) {
     res.status(404).json({
       statusCode: res,
