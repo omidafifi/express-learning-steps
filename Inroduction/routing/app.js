@@ -39,6 +39,23 @@ app.get("/products", (req, res) => {
   res.json(products);
 });
 
+const courses = [
+  {
+    id: 1,
+    name: "html",
+    price: 325,
+    id: 2,
+    name: "css",
+    price: 222,
+    id: 3,
+    name: "JS",
+    price: 126,
+  },
+];
+app.get("/courses", (req, res) => {
+  res.send(courses);
+});
+
 app.get("/users/:id", (req, res) => {
   const { id } = req.params;
   const user = users.users.find((u) => u.id == id);
