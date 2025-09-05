@@ -35,7 +35,7 @@ app.get("/data", async (req, res) => {
 
 //4 بهبودها (Improvements)
 // •	res.render() بهبود یافته است.
-// •	پشتیبانی از فشرده‌سازی Brotli اضافه شده است:
+// •	پشتیبانی از فشرده‌سازی Brotli اضافه شده است::
 
 import compression from "compression";
 app.use(compression({ brotli: { enabled: true } }));
