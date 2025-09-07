@@ -41,6 +41,12 @@ app.delete("/courses/:id", (req, res) => {
   res.status(200).send("Course removed successfully");
 });
 
+app.get("/api/users/:userId/articles/:articleId", (req, res) => {
+  console.log(`userId:${req.params.userId}`);
+  console.log(`articleId${req.params.articleId}`);
+
+  res.status(200).json({ message: "Main user Articels sent to Client" });
+});
 app.listen(PORT, () => {
   console.log(`✅ Server is running at http://localhost:${PORT}`);
 });
