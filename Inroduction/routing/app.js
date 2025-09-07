@@ -22,8 +22,23 @@ const courses = [
 ];
 app.get("/courses/:id", (req, res) => {
   const course = courses.find((course) => course.id === Number(req.params.id));
+  if (course) {
+    res.send(course);
+  } else {
+    res.status(404).send({ message: "Course not found" });
+  }
+});
 
-  res.send(course);
+app.post("/courses", (req, res) => {
+  res.status(201).send("Add a new course");
+});
+
+app.put("/courses/:id", (req, res) => {
+  res.status(200).send("Update course details");
+});
+
+app.delete("/courses/:id", (req, res) => {
+  res.status(200).send("Course removed successfully");
 });
 
 app.listen(PORT, () => {
