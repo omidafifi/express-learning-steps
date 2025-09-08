@@ -1,6 +1,9 @@
 const express = require("express");
 const app = express();
 
+app.use(express.json());
+app.use(express.urlencoded());
+
 const PORT = 3000;
 
 const courses = [
@@ -31,6 +34,7 @@ app.get("/courses/:id", (req, res) => {
 
 app.post("/courses", (req, res) => {
   res.status(201).send("Add a new course");
+  console.log(req.body);
 });
 
 app.put("/courses/:id", (req, res) => {
