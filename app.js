@@ -1,30 +1,14 @@
 const express = require("express");
+const app = express();
+const courseRoutes = require("./routes/courseRoutes"); // وارد کردن مسیرها
+
+app.use(express.json()); // برای اینکه سرور بتواند JSON را بفهمد
+
+// استفاده از مسیرهای مربوط به دوره‌ها
+// تمام مسیرهایی که در فایل courseRoutes هستند، با پیش‌وند /courses شروع می‌شوند
+app.use("/courses", courseRoutes);
+
 const PORT = 3000;
-const app = express(); //()
-
-
-app.get("/courses/:id", (req, res) => {
-  const findCourse = courses.find(
-    (course) => course.id === Number(req.params.id),
-  );
-
-  if (!findCourse) {
-    res.status(404).send("دوره مورد نظر یافت نشد.");
-  }
-
-  res.send(findCourse);
-});
-
-// app.get("/about", (req, res) => {
-//   res.send("home about");
-// });
-// app.get("/articles", (req, res) => {
-//   res.send("home articles");
-// });
-// app.get("/user", (req, res) => {
-//   res.send("home user");
-// });
-
 app.listen(PORT, () => {
-  console.log("app run on Port 3000");
+  console.log(`Server is running on port ${PORT}`);
 });

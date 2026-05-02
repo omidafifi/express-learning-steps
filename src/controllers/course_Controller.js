@@ -1,10 +1,16 @@
-export.
-const findCourse = courses.find(
-  (course) => course.id === Number(req.params.id),
-);
+const Course = require('../models/courseModel'); // وارد کردن مدل
 
-if (!findCourse) {
-  res.status(404).send("دوره مورد نظر یافت نشد.");
-}
+const getCourseById = (req, res) => {
+  // استفاده از تابعی که در مدل تعریف کردیم
+  const findCourse = Course.findById(req.params.id);
 
-res.send(findCourse);
+  if (!findCourse) {
+    return res.status(404).send("دوره مورد نظر یافت نشد.");
+  }
+
+  res.send(findCourse);
+};
+
+module.exports = {
+  getCourseById
+};
