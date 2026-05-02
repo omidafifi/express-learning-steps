@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const courseRoutes = require("./routes/courseRoutes"); // وارد کردن مسیرها
+const courseRoutes = require("./src/routes/course_Routes"); // وارد کردن مسیرها
 
 app.use(express.json()); // برای اینکه سرور بتواند JSON را بفهمد
 
