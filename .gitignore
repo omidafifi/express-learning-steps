@@ -1,4 +1,39 @@
+<<<<<<< HEAD
 node_modules
 .env
 .DS_Store
-.vscode
+.vscode 
+=======
+# Node modules
+node_modules/
+
+# Logs
+logs    
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage reports
+coverage/
+*.lcov
+
+# Build output
+dist/
+build/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# OS files
+.DS_Store
+Thumbs.db
+>>>>>>> 05f4d57c2482585b88d9820127c2003ab97d66c2
