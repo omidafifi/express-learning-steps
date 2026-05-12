@@ -1,25 +1,14 @@
 const express = require("express");
+const connectDB = require("./src/config/mongoConnect");
+const userModel = require("./src/models/users_Model");
 const app = express();
-// const courseRoutes = require("./src/routes/course_Routes"); // وارد کردن مسیرها
 
 app.use(express.json());
-app.use(express.urlencoded())
+app.use(express.urlencoded());
 
-// app.use("/courses", courseRoutes);
+const PORT = 4000;
+connectDB();
 
-app.post("/courses/users", (req, res ) => {
-  // همه داده‌ها را در یک قالب واحد جمع می‌کنیم
-  const responseData = {
-    Course: req.body.Course,
-    price: req.body.price,
-    stufe: req.body.Stufe,
-  };
-  console.log(req.body);
-  // فقط یک بار پاسخ را ارسال می‌کنیم
-  res.status(200).json(responseData);
-});
-
-const PORT = 3000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
